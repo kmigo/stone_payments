@@ -66,7 +66,8 @@ class PaymentUsecase(
                                     StoneCallbackInterface {
 
                                     override fun onSuccess() {
-
+                                        val transactionDAO = TransactionDAO(context); // Substitua "context" pelo contexto atual
+                                        val lastTransaction = transactionDAO.getLastTransaction() ;
                                         Log.d("SUCCESS", transactionObject.toString())
                                     }
 
@@ -80,7 +81,7 @@ class PaymentUsecase(
                                 posPrintReceiptProvider.execute()
 
                             }
-                            sendAMessage(provider.getSingleTransaction().getTid())
+                            sendAMessage("APPROVED")
 
                             callback(Result.Success(true))
                         }
