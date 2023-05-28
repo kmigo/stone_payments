@@ -21,8 +21,8 @@ class PaymentUsecase(
     private val context = stonePayments.context;
 
     fun doPayment(
-        initiatorTransactionKey:String,
-        requestId:String,
+        initiatorTransactionKey:String?,
+        requestId:String?,
         value: Double,
         type: Int,
         installment: Int,
