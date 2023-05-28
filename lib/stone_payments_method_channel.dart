@@ -40,6 +40,8 @@ class MethodChannelStonePayments extends StonePaymentsPlatform {
     required TypeTransactionEnum typeTransaction,
     int installment = 1,
     bool? printReceipt,
+    String? initiatorTransactionKey,
+    String? requestId
   }) async {
     final result = await methodChannel.invokeMethod<String>(
       'payment',
@@ -48,6 +50,8 @@ class MethodChannelStonePayments extends StonePaymentsPlatform {
         'typeTransaction': typeTransaction.value,
         'installment': installment,
         'printReceipt': printReceipt,
+        'initiatorTransactionKey':initiatorTransactionKey,
+        'requestId':requestId
       },
     );
 

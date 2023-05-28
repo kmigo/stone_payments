@@ -26,6 +26,8 @@ class StonePayments {
     required TypeTransactionEnum typeTransaction,
     int installment = 1,
     bool? printReceipt,
+     String? initiatorTransactionKey,
+    String? requestId
   }) {
     assert(value > 0, 'O valor do pagamento deve ser maior que zero.');
     assert(
@@ -38,6 +40,8 @@ class StonePayments {
       typeTransaction: typeTransaction,
       installment: installment,
       printReceipt: printReceipt,
+      initiatorTransactionKey: initiatorTransactionKey,
+      requestId: requestId
     );
   }
 

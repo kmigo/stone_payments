@@ -33,6 +33,8 @@ abstract class StonePaymentsPlatform extends PlatformInterface {
     required TypeTransactionEnum typeTransaction,
     int installment = 1,
     bool? printReceipt,
+     String? initiatorTransactionKey,
+    String? requestId
   }) {
     throw UnimplementedError('payment() has not been implemented.');
   }

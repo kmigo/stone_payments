@@ -34,6 +34,8 @@ class MockStonePaymentsPlatform
     required TypeTransactionEnum typeTransaction,
     int installment = 1,
     bool? printReceipt,
+     String? initiatorTransactionKey,
+    String? requestId
   }) {
     return Future.value('Paied');
   }
