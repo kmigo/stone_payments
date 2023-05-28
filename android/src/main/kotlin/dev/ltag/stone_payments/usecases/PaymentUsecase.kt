@@ -13,6 +13,7 @@ import stone.application.enums.*
 import stone.application.interfaces.StoneActionCallback
 import stone.application.interfaces.StoneCallbackInterface
 import stone.database.transaction.TransactionObject
+import stone.database.transaction.TransactionDAO
 import stone.utils.Stone
 
 class PaymentUsecase(
@@ -49,7 +50,7 @@ class PaymentUsecase(
             provider.setConnectionCallback(object : StoneActionCallback {
 
                 override fun onSuccess() {
-
+                    val transactionDAO = TransactionDAO(context)
                     when (val status = provider.transactionStatus) {
                         TransactionStatusEnum.APPROVED -> {
 
