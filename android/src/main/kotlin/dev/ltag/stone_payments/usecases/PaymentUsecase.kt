@@ -37,6 +37,8 @@ class PaymentUsecase(
 
             transactionObject.instalmentTransaction =
                 InstalmentTransactionEnum.getAt(installment - 1);
+            transactionObject.initiatorTransactionKey = initiatorTransactionKey;
+            transactionObject.requestId = requestId;
             transactionObject.typeOfTransaction =
                 if (type == 1) TypeOfTransactionEnum.CREDIT else TypeOfTransactionEnum.DEBIT;
             transactionObject.isCapture = true;
