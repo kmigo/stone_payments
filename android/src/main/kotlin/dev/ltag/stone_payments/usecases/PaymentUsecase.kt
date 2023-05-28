@@ -80,7 +80,7 @@ class PaymentUsecase(
                                 posPrintReceiptProvider.execute()
 
                             }
-                            sendAMessage("APPROVED")
+                            sendAMessage(provider.getSingleTransaction().getTid())
 
                             callback(Result.Success(true))
                         }
@@ -132,7 +132,7 @@ class PaymentUsecase(
                 StonePaymentsPlugin.flutterBinaryMessenger!!,
                 "stone_payments",
             )
-            channel.invokeMethod("message", message)
+            channel.invokeMethod("messagea", message)
         }
     }
 }
