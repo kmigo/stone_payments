@@ -21,11 +21,14 @@ class PaymentUsecase(
     private val context = stonePayments.context;
 
     fun doPayment(
+        initiatorTransactionKey:String,
+        requestId:String,
         value: Double,
         type: Int,
         installment: Int,
         print: Boolean?,
         callback: (Result<Boolean>) -> Unit,
+
     ) {
         try {
             stonePayments.transactionObject = TransactionObject()

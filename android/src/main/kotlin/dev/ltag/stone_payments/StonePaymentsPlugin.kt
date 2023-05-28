@@ -58,6 +58,8 @@ class StonePaymentsPlugin : FlutterPlugin, MethodCallHandler, Activity() {
             "payment" -> {
                 try {
                     paymentUsecase!!.doPayment(
+                        call.argument('initiatorTransactionKey'),
+                        call.argument('requestId'),
                         call.argument("value")!!,
                         call.argument("typeTransaction")!!,
                         call.argument("installment")!!,
