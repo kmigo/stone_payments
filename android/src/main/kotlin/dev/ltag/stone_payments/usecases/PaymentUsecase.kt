@@ -51,6 +51,7 @@ class PaymentUsecase(
 
                 override fun onSuccess() {
                     val transactionDAO = TransactionDAO(context)
+                    Log.d("----TRANSACTIONDAO----",transactionDAO.toString())
                     when (val status = provider.transactionStatus) {
                         TransactionStatusEnum.APPROVED -> {
 
