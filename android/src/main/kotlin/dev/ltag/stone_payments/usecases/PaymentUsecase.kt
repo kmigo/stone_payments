@@ -1,5 +1,5 @@
 package dev.ltag.stone_payments.usecases
-
+import stone.database.TransactionDAO
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
