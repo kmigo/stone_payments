@@ -11,6 +11,7 @@ import dev.ltag.stone_payments.StonePaymentsPlugin
 import io.flutter.plugin.common.MethodChannel
 import stone.application.enums.*
 import stone.application.interfaces.StoneActionCallback
+import stone.application.interfaces.CancellationProvider
 import stone.application.interfaces.StoneCallbackInterface
 import stone.database.transaction.TransactionObject
 import stone.utils.Stone
